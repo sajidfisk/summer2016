@@ -26,6 +26,7 @@ Full Name: {{ firstName + " " + lastName }}
 <p>Select the background of the contents area</p>
 <input style="background-color:{{myColor}}" ng-model="myColor" value="{{myColor}}"
 
+<br>
 
 <p>The name of our leading student is {{person.firstName  + " " + person.lastName}}. She is freshmen, Psychology Major.</p> Here is the list of all students:
 <ul>
@@ -37,7 +38,50 @@ Full Name: {{ firstName + " " + lastName }}
 </ul>
 
 
-</div>
+<h1>Computing Interest</h1>
+<table>
+<tr>
+<td align=right>Principal Value (pv)</td><td><input type="number" ng-model="pv"></td>
+</tr>
+<tr>
+<td align=right>Rate (rate)</td><td><input type="number" ng-model="rate"></td>
+</tr>
+<tr>
+<td align=right>Duration (years)</td><td><input type="number" ng-model="n"></td>
+</tr>
+<tr>
+	<td align=right>Interest</td>
+	<td>{{ pv *Math.pow(1+rate/1200,n*12) }}</td>
+</tr>
+</table>
+
+
+<h1>Looping with ng-repeat</h1>
+<ul>
+	<li ng-repeat="student in students">
+		{{ student.firstName + " " + student.lastName}}
+	</li>
+</ul>
+
+<h1>Inventory</h1>
+<table width="500" border="2">
+	<tr>
+		<td>ID</td>
+		<td>Price/Item</td>
+		<td>Quantity</td>
+		<td>Total Price</td>
+	</tr>
+	<tr ng-repeat="item in inventory">
+		<td>{{  item.id  }}</td>
+		<td>{{  item.price  }}</td>
+		<td>{{  item.quantity }}</td>
+		<td>{{  item.quantity*item.price  }}</td>
+	</tr>
+</ul>
+
+</table>
+
+</div> <!-- ************* END OF myApp ************** -->
 
 
 </body>
