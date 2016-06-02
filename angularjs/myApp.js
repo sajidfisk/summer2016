@@ -1,1 +1,0 @@
-ar app = angular.module('myApp', []);
