@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="myScript.js"></script>
+
+</head>
+
+<body>
+
+
+<div data-ng-app="myApp" data-ng-controller="myCtrl", data-ng-init="future=2025">
+<h1>Welcome to Fisk University</h1>
+
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+<div style="background-color:{{myColor}}">
+Full Name: {{ firstName + " " + lastName }}
+
+<p>Fisk was established in {{established}}, which is {{year-established}} years ago; in {{future}} it would be <span ng-bind="future-established"></span> years old.</p>
+
+</div>
+
+<p>Select the background of the contents area</p>
+<input style="background-color:{{myColor}}" ng-model="myColor" value="{{myColor}}"
+
+
+<p>The name of our leading student is {{person.firstName  + " " + person.lastName}}. She is freshmen, Psychology Major.</p> Here is the list of all students:
+<ul>
+	<li>{{students[0].firstName + " " + students[0].lastName}}</li>
+	<li>{{students[1].firstName + " " + students[1].lastName}}</li>
+	<li>{{students[2].firstName + " " + students[2].lastName}}</li>
+	<li>{{students[3].firstName + " " + students[3].lastName}}</li>
+	<li>{{students[4].firstName + " " + students[4].lastName}}</li>
+</ul>
+
+
+</div>
+
+
+</body>
+</html>
