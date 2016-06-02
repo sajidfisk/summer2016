@@ -3,7 +3,7 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="ex1.js"></script>
-
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -55,6 +55,11 @@ Full Name: {{ firstName + " " + lastName }}
 </tr>
 </table>
 
+<!--
+	Using ng-repeat for Looping
+	Example 1: Students list
+	Example 2: Inventory List
+-->
 
 <h1>Looping with ng-repeat</h1>
 <ul>
@@ -78,9 +83,47 @@ Full Name: {{ firstName + " " + lastName }}
 		<td>{{  item.quantity*item.price  }}</td>
 	</tr>
 </ul>
-
 </table>
 
+<!--
+	Using Directives
+-->
+
+<h1>Using Directives</h1>
+<p>
+Here is summer2016 directive: <summer2016></summer2016>
+</p>
+
+<p>
+here is summer2016 directive in p tag (note that it is displayed in a separate paragraph): <p summer2016></p>
+</p>
+
+
+<h1>Validate User Input</h1>
+
+<form name="myForm">
+<p>
+Personal Email: 
+<input type="email" name="myAddress" ng-model="myAddress">
+<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</p>
+
+
+<p>
+Fisk Email: 
+<input type="email" name="fiskEmail" ng-model="fiskEmail" required>
+<p>Status:</p>
+<ul>
+<li>Valid: {{ myForm.fiskEmail.$valid  }}</li>
+<li>Dirty: {{ myForm.fiskEmail.$dirty  }}</li>
+<li>Touched: {{ myForm.fiskEmail.$touched  }} </li>
+</ul>
+</p>
+
+</form>
+
+<p>Enter your email address in input field.
+</p>
 </div> <!-- ************* END OF myApp ************** -->
 
 
