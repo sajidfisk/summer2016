@@ -2,7 +2,8 @@
 <html>
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="ex1.js"></script>
+<script src="ex1Model.js"></script>
+<script src="ex1Ctrl.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -114,9 +115,14 @@ Fisk Email:
 <input type="email" name="fiskEmail" ng-model="fiskEmail" required>
 <p>Status:</p>
 <ul>
-<li>Valid: {{ myForm.fiskEmail.$valid  }}</li>
-<li>Dirty: {{ myForm.fiskEmail.$dirty  }}</li>
-<li>Touched: {{ myForm.fiskEmail.$touched  }} </li>
+<li>Valid: {{ myForm.fiskEmail.$valid  }} - 
+	<span ng-show="myForm.fiskEmail.$valid">Valid Text</span></li>
+<li>Email Error: {{ myForm.fiskEmail.$error.email  }} - 
+	<span ng-show="myForm.fiskEmail.$error.email">Email Error</span></li>
+<li>Dirty: {{ myForm.fiskEmail.$dirty  }} - 
+	<span ng-show="myForm.fiskEmail.$dirty">Dirty Text</span></li>
+<li>Touched: {{ myForm.fiskEmail.$touched  }}  - 
+	<span ng-show="myForm.fiskEmail.$touched">Touched Text</span></li>
 </ul>
 </p>
 
