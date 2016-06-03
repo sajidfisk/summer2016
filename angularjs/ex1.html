@@ -2,13 +2,22 @@
 <html>
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
 <script src="ex1Model.js"></script>
 <script src="ex1Ctrl.js"></script>
+
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
+<!-- 
+	*******************************************************
+
+	               myApp begins
+
+	*******************************************************
+-->
 
 <div data-ng-app="myApp" data-ng-controller="myCtrl", data-ng-init="future=2025">
 <h1>Welcome to Fisk University</h1>
@@ -86,6 +95,7 @@ Full Name: {{ firstName + " " + lastName }}
 </ul>
 </table>
 
+
 <!--
 	Using Directives
 -->
@@ -129,8 +139,65 @@ Fisk Email:
 </form>
 
 <p>Enter your email address in input field.
+
 </p>
-</div> <!-- ************* END OF myApp ************** -->
+
+<h1>Examples of Scope and Root Scope</h1>
+<ul>
+<li>The myEvent variable from rootScope, {{  myEvent }} </li>
+<li>The myColor variable of scope (lightYellow) has priority over rootScope (blue) {{ myColor}}</li>
+</ul>
+
+<!-- 
+	*******************************************************
+
+     				Using Filters
+
+*******************************************************
+-->
+<h1>Using Filters</h1>
+
+<ul>
+	<li ng-repeat="student in students | orderBy: 'lastName'">
+		{{ (student.lastName | uppercase) + ", " + student.firstName}}
+	</li>
+</ul>
+
+<table width="500" border="2">
+	<tr>
+		<td>ID</td>
+		<td>Price/Item</td>
+		<td>Quantity</td>
+		<td>Total Price</td>
+	</tr>
+	<tr ng-repeat="item in inventory">
+		<td>{{  item.id  }}</td>
+		<td>{{  item.price | currency }}</td>
+		<td>{{  item.quantity }}</td>
+		<td>{{  (item.quantity*item.price) | currency  }}</td>
+	</tr>
+</ul>
+</table>
+
+<p>Type any text for search</p>
+<p><input type="text" ng-model="nameFilter"></p>
+<table width="300" border=1>
+	<tr ng-repeat="student in students | orderBy: 'lastName' | filter: nameFilter">
+		<td>{{ student.lastName | uppercase }} </td>
+		<td>{{ student.firstName  }} </td>
+		<td>{{ student.major | trimText:4 }}
+	</tr>
+</table>
+
+
+<!-- 
+	*******************************************************
+
+	                   myApp ends
+
+	******************************************************
+-->
+</div> <!-- end of myApp -->
 
 
 </body>

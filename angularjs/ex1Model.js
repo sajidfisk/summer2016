@@ -8,3 +8,22 @@ app.directive("summer2016", function(){
     };
 
 });
+
+app.run(function($rootScope){
+	$rootScope.myColor = 'blue';
+	$rootScope.myEvent = 'FRS 2017'
+});
+
+
+app.filter('trimText', function(){
+	return function(x, end){
+		var txt;
+		if (end < x.length){
+			txt = x.substring(0, end) + "...";
+		}else{
+			txt = x;
+		}
+		return txt ;
+	};
+});
+

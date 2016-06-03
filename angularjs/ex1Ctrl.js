@@ -2,16 +2,16 @@ app.controller('myCtrl', function($scope) {
     $scope.Math = window.Math;
     $scope.firstName= "Jane";
     $scope.lastName= "Doe";
-    $scope.myColor = "lightblue";
+    $scope.myColor = "lightyellow";
     $scope.established = 1866;
     $scope.year = 2016;
     $scope.person = {firstName:'Jazmyn', lastName:'Scott'};
     $scope.students = [
-    	{firstName: "Denise", lastName:'Buliga'},
-    	{firstName: "Erik", lastName:'Shaw'},
-    	{firstName: "Maya", lastName:'Walters'},
-    	{firstName: "Jada", lastName:'Prendergast'},
-    	{firstName: "Jazmyn", lastName:'Scott'},
+    	{firstName: "Denise", lastName:'Buliga', major: 'Business Administration/CS Minor'},
+    	{firstName: "Erik", lastName:'Shaw', major: 'Business Administration/CS Minor'},
+    	{firstName: "Maya", lastName:'Walters', major: 'Business Administration'},
+    	{firstName: "Jada", lastName:'Prendergast', major: 'Computer Science'},
+    	{firstName: "Jazmyn", lastName:'Scott', major: 'Psychology'},
     ];
     $scope.pv=1000;
     $scope.rate=4.25;
