@@ -1,4 +1,4 @@
-app.controller('myCtrl', function($scope) {
+app.controller('myCtrl', function($scope, $location, $interval) {
     $scope.Math = window.Math;
     $scope.firstName= "Jane";
     $scope.lastName= "Doe";
@@ -28,5 +28,21 @@ app.controller('myCtrl', function($scope) {
         {id: 8232, quantity: 35, price: 33.95},
     ];
     $scope.myAddress="sajid.fisk@gmail.com";
-    $scope.fiskEmail = "shussain@fisk.edu"
+    $scope.fiskEmail = "shussain@fisk.edu";
+    $scope.myUrl = $location.absUrl();
+    $scope.quotes = ["Just Do It. Nike", 
+        "We become what we think about. Earl Nightingale", 
+        "Life is 10% what happens to me and 90% of how I react to it. Charles Swindoll",
+        "Every child is an artist. The problem is how to remain an artist once he grows up. Pablo Picasso",
+        "There is only one way to aovid criticism: do nothing, say nothing, and be nothing. Aristotle",
+        "Everything has beauty, but not everyone can see. Confucius",
+        "When I let go of what I am, I become what I might be. Lao Tzu",
+        "Life is not measured by the number of breaths we take, but by the moments that take our breath away. Maya Angelou"];
+    $scope.quoteNum = 0;
+    $scope.quote = $scope.quotes[0];
+    $interval(function(){
+        $scope.quote = $scope.quotes[$scope.quoteNum];
+        $scope.quoteNum = ($scope.quoteNum + 1)%$scope.quotes.length
+    }, 1000);
 });
+
