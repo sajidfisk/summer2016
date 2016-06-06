@@ -27,9 +27,27 @@ app.filter('trimText', function(){
 	};
 });
 
+app.filter('properCase', function(){
+	return function(x){
+		var txt = x[0].toUpperCase();
+		for(var i=1; i<x.length; i++){
+			txt += x[i].toLowerCase();
+		}
+		return txt ;
+	};
+});
+
 
 app.service('hexafy', function(){
 	this.toHex = function(x){
 		return x.toString(16);
 	}
 });
+
+
+
+app.filter('hexFormat',['hexafy', function(hexafy) {
+    return function(x) {
+        return hexafy.toHex(x);
+    };
+}]);

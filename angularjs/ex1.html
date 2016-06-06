@@ -182,12 +182,12 @@ Fisk Email:
 <p>Type any text for search</p>
 
 <p><input type="text" ng-model="nameFilter"></p>
-<p>Adding a custom filter to trim text after given number of letters (e.g. 4). The trimText filter is applied to the student majors.</p>
+<p>Adding a custom filter to trim text after given number of letters (e.g. 4). The trimText filter is applied to the student majors. We have added another custom filter, properCase, to convert text to proper case.</p>
 
 <table width="300" border=1>
 	<tr ng-repeat="student in students | orderBy: 'lastName' | filter: nameFilter">
 		<td>{{ student.lastName | uppercase }} </td>
-		<td>{{ student.firstName  }} </td>
+		<td>{{ student.firstName | properCase }} </td>
 		<td>{{ student.major | trimText:4 }}
 	</tr>
 </table>
@@ -206,11 +206,12 @@ The absolute URL of this page is <a href="{{ myUrl }}">{{ myUrl}}</a>
 <p>Current time: <span class=quote>{{ theTime }}</span></p>
 
 <h2>A few famous quotes</h2>
-<div class="quote">{{ quote }}</div>
+<p class="quote">{{ quote }}</p>
 <p>The above quotes are displayed using internval serivce.</p>
 
+<p><input type="number" ng-model="myNum"></p>
 <p>
-The hexadecimal value of 255 is; {{ hex }}
+The hexadecimal value of {{ myNum }} is {{ myNum | hexFormat }}
 </p>
 <!-- 
 	*******************************************************

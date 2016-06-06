@@ -7,10 +7,10 @@ app.controller('myCtrl', function($scope, $location, $interval, hexafy) {
     $scope.year = 2016;
     $scope.person = {firstName:'Jazmyn', lastName:'Scott'};
     $scope.students = [
-    	{firstName: "Denise", lastName:'Buliga', major: 'Business Administration/CS Minor'},
-    	{firstName: "Erik", lastName:'Shaw', major: 'Business Administration/CS Minor'},
-    	{firstName: "Maya", lastName:'Walters', major: 'Business Administration'},
-    	{firstName: "Jada", lastName:'Prendergast', major: 'Computer Science'},
+    	{firstName: "denise", lastName:'Buliga', major: 'Business Administration/CS Minor'},
+    	{firstName: "ERIK", lastName:'Shaw', major: 'Business Administration/CS Minor'},
+    	{firstName: "maya", lastName:'Walters', major: 'Business Administration'},
+    	{firstName: "JADA", lastName:'Prendergast', major: 'Computer Science'},
     	{firstName: "Jazmyn", lastName:'Scott', major: 'Psychology'},
     ];
     $scope.pv=1000;
