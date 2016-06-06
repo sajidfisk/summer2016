@@ -27,3 +27,9 @@ app.filter('trimText', function(){
 	};
 });
 
+
+app.service('hexafy', function(){
+	this.toHex = function(x){
+		return x.toString(16);
+	}
+});

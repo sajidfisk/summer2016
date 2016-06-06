@@ -1,4 +1,4 @@
-app.controller('myCtrl', function($scope, $location, $interval) {
+app.controller('myCtrl', function($scope, $location, $interval, hexafy) {
     $scope.Math = window.Math;
     $scope.firstName= "Jane";
     $scope.lastName= "Doe";
@@ -30,11 +30,13 @@ app.controller('myCtrl', function($scope, $location, $interval) {
     $scope.myAddress="sajid.fisk@gmail.com";
     $scope.fiskEmail = "shussain@fisk.edu";
     $scope.myUrl = $location.absUrl();
+
+    // display quotes 
     $scope.quotes = ["Just Do It. Nike", 
         "We become what we think about. Earl Nightingale", 
         "Life is 10% what happens to me and 90% of how I react to it. Charles Swindoll",
         "Every child is an artist. The problem is how to remain an artist once he grows up. Pablo Picasso",
-        "There is only one way to aovid criticism: do nothing, say nothing, and be nothing. Aristotle",
+        "There is only one way to avoid criticism: do nothing, say nothing, and be nothing. Aristotle",
         "Everything has beauty, but not everyone can see. Confucius",
         "When I let go of what I am, I become what I might be. Lao Tzu",
         "Life is not measured by the number of breaths we take, but by the moments that take our breath away. Maya Angelou"];
@@ -43,6 +45,15 @@ app.controller('myCtrl', function($scope, $location, $interval) {
     $interval(function(){
         $scope.quote = $scope.quotes[$scope.quoteNum];
         $scope.quoteNum = ($scope.quoteNum + 1)%$scope.quotes.length
+    }, 3000);
+    
+    // display current time
+    $scope.theTime = new Date().toLocaleTimeString();
+    $interval(function () {
+        $scope.theTime = new Date().toLocaleTimeString();
     }, 1000);
+
+    // using custom service
+    $scope.hex = hexafy.toHex(255);
 });
 
