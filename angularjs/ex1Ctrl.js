@@ -27,19 +27,25 @@ app.controller('myCtrl', function($scope, $location, $interval, hexafy) {
         {id: 5873, quantity: 45, price: 12.99},
         {id: 8232, quantity: 35, price: 33.95},
     ];
+
     $scope.myAddress="sajid.fisk@gmail.com";
     $scope.fiskEmail = "shussain@fisk.edu";
     $scope.myUrl = $location.absUrl();
 
     // display quotes 
-    $scope.quotes = ["Just Do It. Nike", 
+    $scope.quotes = [
+        "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that. Martin Luther King, Jr.", 
+        "Just Do It. Nike", 
         "We become what we think about. Earl Nightingale", 
         "Life is 10% what happens to me and 90% of how I react to it. Charles Swindoll",
         "Every child is an artist. The problem is how to remain an artist once he grows up. Pablo Picasso",
         "There is only one way to avoid criticism: do nothing, say nothing, and be nothing. Aristotle",
         "Everything has beauty, but not everyone can see. Confucius",
         "When I let go of what I am, I become what I might be. Lao Tzu",
-        "Life is not measured by the number of breaths we take, but by the moments that take our breath away. Maya Angelou"];
+        "Life is not measured by the number of breaths we take, but by the moments that take our breath away. Maya Angelou",
+        "Education must not simply teach work - it must teach Life. W.E.B. Du Bois",
+    ];
+    
     $scope.quoteNum = 0;
     $scope.quote = $scope.quotes[0];
     $interval(function(){
@@ -55,5 +61,58 @@ app.controller('myCtrl', function($scope, $location, $interval, hexafy) {
 
     // using custom service
     $scope.hex = hexafy.toHex(255);
+
+    $scope.quoteObjects = [
+        { quote: "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.",
+          author: "Martin Luther King, Jr.", 
+          image: "mlk.jpg"
+        },
+        {
+            quote: "Just Do It.",
+            author: "Nike",
+            image: "nike.jpg" 
+        },
+        {
+            quote: "We become what we think about.",
+            author: "Earl Nightingale",
+            image: "earl-nightingale.jpg"
+        }, 
+        {
+            quote: "Life is 10% what happens to me and 90% of how I react to it.",
+            author: "Charles Swindoll",
+            image: "chuck-swindoll.jpg"
+        },
+        {
+            quote: "Every child is an artist. The problem is how to remain an artist once he grows up.",
+            author: "Pablo Picasso", 
+            image: "pablo-picasso.jpg"   
+        },
+        {
+            quote: "There is only one way to avoid criticism: do nothing, say nothing, and be nothing.",
+            author: "Aristotle",
+            image: "aristotle.jpg"
+        },
+        {
+            quote: "Everything has beauty, but not everyone can see.",
+            author: "Confucius",
+            image: "confucius.jpg"
+        },
+        {
+            quote: "When I let go of what I am, I become what I might be.",
+            author: "Lao Tzu",
+            image: "lao-tzu.jpg"
+        },
+        {
+            quote: "Life is not measured by the number of breaths we take, but by the moments that take our breath away.",
+            author: "Maya Angelou",
+            image: "maya-angelou.jpg"
+        },
+        {
+            quote: "Education must not simply teach work - it must teach Life.",
+            author: " W.E.B. Du Bois",
+            image: "dubois.jpg"
+
+        }
+    ];    
 });
 

@@ -165,12 +165,14 @@ Fisk Email:
 
 <table width="500" border="2">
 	<tr>
+		<td>Index</td>
 		<td>ID</td>
 		<td>Price/Item</td>
 		<td>Quantity</td>
 		<td>Total Price</td>
 	</tr>
 	<tr ng-repeat="item in inventory">
+		<td>{{  $index+1 }}</td>
 		<td>{{  item.id  }}</td>
 		<td>{{  item.price | currency }}</td>
 		<td>{{  item.quantity }}</td>
@@ -213,6 +215,28 @@ The absolute URL of this page is <a href="{{ myUrl }}">{{ myUrl}}</a>
 <p>
 The hexadecimal value of {{ myNum }} is {{ myNum | hexFormat }}
 </p>
+
+
+<p>Select a quote</p>
+<select ng-model="selectedQuote" ng-options="x.author for x in quoteObjects">
+</select>
+
+<p><img src="images/{{ selectedQuote.image}}" width="200"></p>
+<p>{{ selectedQuote.author}}</p>
+<p>{{ selectedQuote.quote}}</p>
+
+<table>
+	<tr ng-repeat="quote in quoteObjects">
+		<td align=center>
+			<img src="images/{{ quote.image}}" width="200"></p>
+			<p>{{ quote.author}}</p>
+		</td>
+		<td width=300 align=center>
+			<p>{{ quote.quote}}</p>
+		</td>
+	</tr>
+</table>
+
 <!-- 
 	*******************************************************
 
